@@ -197,10 +197,10 @@ $(function () {
 
     // 监听键盘 control+enter
     $(document).unbind('keypress.up').bind('keypress.up',function(e){
+
         if(e.ctrlKey && e.which == 13 || e.which == 10) {
+
             $('.subBtn').trigger("click");
-        }else{
-            return false;
         }
 
 
@@ -220,11 +220,11 @@ $(function () {
             timeD.getSeconds() < 10 ? ('0'+ timeD.getSeconds()) : (timeD.getSeconds()),
         ];
 
-        return str[0]+':'+str[1]+':'+str[2]+' '+ str[3]+':'+str[4]+':'+str[5];
+        return str[3]+':'+str[4]+':'+str[5];
     }
 
     socket.on('chat message', function(msg){
-
+        playAudio();
         var nickName = $('input.nickName').val();
 
         var userType = (nickName == msg.user) ? "self": "other";
@@ -244,5 +244,22 @@ $(function () {
     });
 
 
+
+
+
+
+    // 控制消息音效的
+
+    function playAudio(){
+        var audio = document.getElementById('messageBg');
+        if(audio!==null){
+            //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
+            if(audio.paused)                     {
+                audio.play();//audio.play();// 这个就是播放
+            }else{
+                audio.pause();// 这个就是暂停
+            }
+        }
+    }
 
 });
