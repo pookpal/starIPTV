@@ -1,0 +1,46 @@
+[
+  {
+    "id": 2,
+    "type": "live",
+    "name": "CCTV-2",
+    "stream": "http://192.168.32.66:80/live/153376.stream/playlist.m3u8"
+  },
+
+  {
+    "id": 5,
+    "type": "live",
+    "name": "CCTV-5",
+    "stream": "http://192.168.32.66:80/live/156016.stream/playlist.m3u8"
+  },
+
+  {
+    "id": 4,
+    "type": "live",
+    "name": "CCTV-4",
+    "stream": "http://192.168.32.66:80/live/154032.stream/playlist.m3u8"
+  },
+
+
+  {
+    "id": 101,
+    "type": "live",
+    "name": "河北卫视",
+    "stream": "http://192.168.32.66:80/live/154293.stream/playlist.m3u8"
+  },
+
+  {
+    "id": 102,
+    "type": "live",
+    "name": "广东卫视",
+    "stream": "http://192.168.32.66:80/live/151831.stream/playlist.m3u8"
+  },
+
+
+  {
+    "id": 201,
+    "type": "live",
+    "name": "4楼1号探头",
+    "stream": "http://192.168.32.66:80/live/151223.stream/playlist.m3u8"
+  }
+
+]
