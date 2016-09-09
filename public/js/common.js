@@ -241,6 +241,14 @@ $(function () {
             '</li>';
 
         $('.chatLists ul').append($(lihtml));
+
+        //chatBox 滚动条
+        var chatBoxScroll = function(){
+            var ulHeight = $('.chatLists ul').offset().top;
+            $('.chatLists').scrollTop(ulHeight);
+        }();
+        chatBoxScroll=null;
+
     });
 
 

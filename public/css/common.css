@@ -336,7 +336,7 @@ body{
 .rightSide .chatBox .chatContent .inputBox input#nickName{
     height: 25px;
     line-height: 29px;
-    width: 145px;
+    width: 140px;
 }
 
 .rightSide .chatBox .chatContent .inputBox input.subBtn{
