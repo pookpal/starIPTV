@@ -225,13 +225,24 @@ $(function () {
 
     socket.on('chat message', function(msg){
         playAudio();
-        var nickName = $('input.nickName').val();
 
+        var nickName = $('input.nickName').val();
         var userType = (nickName == msg.user) ? "self": "other";
+
+
+        var user = msg.user.slice(2);
+
+        if(msg.user.substring(0,2)=='__'){
+            var str = '<span class="nickName" style="color: #000066;font-weight: bolder;">'+user;
+        }else{
+            var str = '<span class="nickName">'+ msg.user;
+        }
+
+
         var lihtml =
             '<li class="'+userType+'"> ' +
                 '<p class="writer">' +
-                    '<span class="nickName">'+ msg.user +
+                    str +
                    '</span>' +
                     '<span class="time">[' +
                         formatTime(msg.time) +
