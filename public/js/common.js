@@ -123,6 +123,10 @@ $(function () {
 
 
 
+
+
+
+
     function changeVod(stream){
         CKobject.getObjectById('ckplayer_a1').newAddress('{a->'+stream+'}{html5->'+stream+'}')
     }
@@ -164,6 +168,8 @@ $(function () {
 
     var socket = io();
 
+
+    // 提交按钮
     $('.subBtn').click(function(e){
         e.preventDefault();
         var textDom  = $('textarea.message');
@@ -180,7 +186,6 @@ $(function () {
 
             socket.emit('chat message',msg);
 
-
             textDom.val('');
         }else{
             alert('不能发表空留言!');
@@ -189,6 +194,19 @@ $(function () {
 
         return false;
     });
+
+    // 监听键盘 control+enter
+    $(document).unbind('keypress.up').bind('keypress.up',function(e){
+        if(e.ctrlKey && e.which == 13 || e.which == 10) {
+            $('.subBtn').trigger("click");
+        }else{
+            return false;
+        }
+
+
+    });
+
+
 
     function formatTime(time){
         var timeD = new Date(time);
